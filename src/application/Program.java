@@ -37,10 +37,22 @@ public class Program {
         System.out.println("Inserted! " + newSeller.getId());
 
         System.out.println("\n===TEST 5: seller update ===");
-        seller = sellerDao.findById(1);
+        seller = sellerDao.findById(2);
         seller.setName("marta Waine");
         sellerDao.update(seller);
         System.out.println("Update completed");
+
+        System.out.println("\n===TEST 6: seller delete ===");
+
+        if(sellerDao.findById(24) != null){
+            sellerDao.deleteById(24);
+            System.out.println("Deleted");
+        }
+        else{
+            System.out.println("Id doesn't exist");
+        }
+
+
 
 
 
